@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaya Bobo - Interactive Designer</title>
+  <style>
+    :root {
+      --light-blue: #cedae0;
+      --white: #fff;
+      --darker-blue: #5f93ae;
+      --text-color: #3e5d86;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(https://plus.unsplash.com/premium_photo-1666922728269-58cd59269fe9?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      color: var(--text-color);
+      font-family: Calibri, sans-serif;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(to bottom right, white, var(--light-blue));
+      padding: 2rem 4rem;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 2rem;
+      box-shadow: 4px 6px 0px #00000042;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      width: calc(100% + 3rem);
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--light-blue);
+      margin-right: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .profile-pic:hover {
+        scale: 1.05;
+        transition: 0.3s;
+        border-color: #e3e9ec;
+    }
+
+    .profile-info {
+      text-align: left;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 0.3rem;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 1rem;
+    }
+
+    .sections {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      margin-top: 1rem;
+      gap: 2rem;
+    }
+
+    .skills, .coursework {
+      list-style-type: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .skills li, .coursework li {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .divider {
+      height: 2px;
+      background-color: var(--light-blue);
+      width: 100%;
+      margin: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .pronouns {
+      color: var(--darker-blue);
+    }
+
+    /* Media Queries for Smaller Screens */
+    @media (max-width: 600px) {
+        body, html {
+            overflow: scroll;
+            align-items: flex-start;
+        }
+
+      .profile-container {
+        padding: 2rem;
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .profile-pic {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      .profile-info {
+        text-align: center;
+      }
+
+      .sections {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .sections h3 {
+       padding-left: 0.2rem;
+      }
+
+      .skills, .coursework {
+        width: 100%;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2, h3 {
+        font-size: 1.4rem;
+      }
+
+      .skills li, .coursework li {
+        font-size: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+        <a href="https://www.linkedin.com/in/kayabobo" target="_blank">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQEd5R12mc_78A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701098849199?e=1736985600&v=beta&t=fffP3n-d-Ibc-RjBtXWVD6TT_oUuhKDlaW3YiII3Y9I" alt="Kaya Bobo" class="profile-pic">
+          </a>          
+      <div class="profile-info">
+        <h1>Kaya Bobo</h1>
+        <p class="pronouns">She/Her</p>
+        <h2>Interactive Designer</h2>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sections">
+      <div>
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>Front-End Development</li>
+          <li>User Interface Prototyping</li>
+          <li>CSS, HTML</li>
+          <li>Microsoft Office</li>
+          <li>Adobe Photoshop</li>
+          <li>Adobe InDesign</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Relevant Coursework</h3>
+        <ul class="coursework">
+          <li>Drawing I</li>
+          <li>Introduction To 2D Design</li>
+          <li>Design And Color</li>
+          <li>3D Design - ART 1200</li>
+          <li>Introduction To Programming</li>
+          <li>Prototyping I</li>
+          <li>Front End Development I</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      gsap.from(".profile-container", {
+        opacity: 0,
+        duration: 1,
+        y: 10,
+        ease: "power1.out"
+      });
+    });
+  </script>
+</body>
+</html>
